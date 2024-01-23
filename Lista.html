@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Notes</title>
+    <link rel="shortcut icon" href="./img/icons8-lista-64.png">
+    <link rel="stylesheet" href="./Styles/Color.css">
+</head>
+<body>
+    <div class="list roundBorder">
+        
+        <div class="date">
+            
+            <div class="dateRight">
+                
+                <div id="dateNumber"></div>
+                
+                <div>
+                    
+                    <div id="dateMonth"></div>
+                    
+                    <div id="dateYear"></div>
+                
+                </div>
+            
+            </div>
+            
+            <div id="dateText"></div>
+        </div>
+        
+        <form onsubmit="addNewTask(event)" >
+            
+            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
+            
+            <button type="submit" class="addTaskButton">+</button>
+            
+            <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+        
+        </form>
+        
+        <div id="tasksContainer"></div>
+    
+    </div>
+    
+    <script src="./Tareas.js"></script>
+
+</body>
+</html>
