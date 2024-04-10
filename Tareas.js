@@ -1,6 +1,7 @@
 /* Obteniendo elementos del DOM */
 const dateNumber = document.getElementById("dateNumber");
 const dateText = document.getElementById("dateText");
+const clock = document.getElementById("clock");
 const dateMonth = document.getElementById("dateMonth");
 const dateYear = document.getElementById("dateYear");
 const tasksContainer = document.getElementById("tasksContainer");
@@ -12,6 +13,14 @@ const setDate = () => {
   dateText.textContent = date.toLocaleString("es", { weekday: "long" });
   dateMonth.textContent = date.toLocaleString("es", { month: "short" });
   dateYear.textContent = date.toLocaleString("es", { year: "numeric" });
+};
+
+const setTime = () => {
+  const date = new Date();
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const seconds = date.getSeconds().toString().padStart(2, '0');
+  clock.textContent = `${hours}:${minutes}:${seconds}`;
 };
 
 /* Función para agregar una nueva tarea */
@@ -49,4 +58,8 @@ const renderOrderedTasks = () => {
 
 /* Configuración inicial: establece la fecha actual y renderiza las tareas ordenadas */
 setDate();
+setTime();
 renderOrderedTasks();
+
+/*Llamar la constante setTime cada segundo*/
+setInterval(setTime, 1000);
