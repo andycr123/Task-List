@@ -41,20 +41,20 @@ const changeTaskState = (event) => {
   event.target.classList.toggle("done"); // Alterna la clase 'done' en la tarea, marcándola como hecha o no hecha
 };
 
-/* Función para ordenar las tareas en la lista */
+/* Funcion para prdenar las tareas las tareas en la lista */
 const order = () => {
-  const done = [];
-  const toDo = [];
+  const  done  = [];
+  const  toDo  = [];
   tasksContainer.childNodes.forEach((el) => {
-    el.classList.contains("done") ? done.push(el) : toDo.push(el); // Divide las tareas en hechas y no hechas
-  });
-  return [...toDo, ...done]; // Retorna un array con las tareas no hechas seguidas de las hechas
-};
+    el.classList.contains("done") ? done.push(el) : toDo.push(el) /* Dividir las tareas listas y no listas*/
+  })
+  return [...toDo, ...done]; /*Es que me va a devolver de los arrays las tareas hechas y no hechas, */
+ }
 
-/* Función para renderizar las tareas ordenadas en la lista */
-const renderOrderedTasks = () => {
-  order().forEach((el) => tasksContainer.appendChild(el)); // Agrega cada tarea en el orden correcto al contenedor de tareas
-};
+ /*Funcionalidad para retornar las tareas hechas en la lista  */
+ const renderOrderedTasks = () => {
+  order().forEach((el) => tasksContainer.appendChild(el)); /* Agregar en cada tarea el orden correcto del contenedor */
+ }
 
 /* Configuración inicial: establece la fecha actual y renderiza las tareas ordenadas */
 setDate();
@@ -62,4 +62,4 @@ setTime();
 renderOrderedTasks();
 
 /*Llamar la constante setTime cada segundo*/
-setInterval(setTime, 1000);
+setInterval(setTime, 1000)
